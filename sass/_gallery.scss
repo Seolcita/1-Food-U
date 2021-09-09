@@ -1,0 +1,109 @@
+/** @format */
+
+.galleries {
+  background-color: #333;
+  padding: 5rem 0;
+
+  // display: flex;
+  // flex-direction: column;
+  // align-items: center;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 10rem;
+
+  &__link {
+    position: relative;
+    margin: 4rem 1rem;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      top: 8rem;
+      left: 2rem;
+      background-color: white;
+      transition: width 0.3s;
+    }
+
+    &:hover::before {
+      width: 85%;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      height: 0%;
+      width: 2px;
+      top: 4rem;
+      right: 8rem;
+      background-color: white;
+      transition: height 0.3s;
+    }
+
+    &:hover::after {
+      height: 75%;
+    }
+
+    &:hover .gallery__name {
+      width: 100%;
+    }
+
+    &:hover .gallery__description {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 1s 0.2s;
+    }
+
+    &:hover .gallery__img {
+      box-shadow: 1rem 1rem 0.1rem #e92929, 2rem 2rem 0.1rem #a2e946,
+        3rem 3rem 0.1rem #297ce9, 4rem 4rem 0.1rem #e92999;
+      transform: scale(1.1);
+      filter: blur(0.5rem);
+      opacity: 0.3;
+    }
+  }
+
+  &__img {
+    width: 24vw;
+    height: 15vw;
+    object-fit: cover;
+    box-shadow: 0.3rem 0.3rem 0.1rem #e92929, 0.5rem 0.5rem 0.1rem #a2e946,
+      0.7rem 0.7rem 0.1rem #297ce9, 0.9rem 0.9rem 0.1rem #e92999;
+    transition: all 0.5s;
+  }
+
+  &__name {
+    position: absolute;
+    top: 3rem;
+    left: 3rem;
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    color: #fff;
+    width: 0;
+    overflow: hidden;
+    transition: width 0.3s;
+  }
+
+  &__description {
+    position: absolute;
+    bottom: 3vw;
+    left: 2rem;
+    width: 70%;
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    color: #fff;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+  }
+}
