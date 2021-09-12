@@ -64,11 +64,11 @@ html {
   width: 30rem;
   background-color: #a79a2d;
   padding: 4rem;
+  box-shadow: 1rem 1rem 1rem #000;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 1rem 1rem 1rem #000;
   position: relative;
   transform: rotateY(20deg) skewX(-2deg);
   transition: transform 0.5s, box-shadow 0.5s; }
@@ -127,11 +127,13 @@ html {
   padding: 5rem 0; }
 
 .gallery {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;
-  margin-top: 10rem; }
+  margin-top: 10rem;
+  padding: 0 20rem; }
   .gallery__link {
     position: relative;
     margin: 4rem 1rem; }
@@ -169,8 +171,8 @@ html {
       filter: blur(0.5rem);
       opacity: 0.3; }
   .gallery__img {
-    width: 24vw;
-    height: 15vw;
+    width: 400px;
+    height: 250px;
     object-fit: cover;
     box-shadow: 0.3rem 0.3rem 0.1rem #e92929, 0.5rem 0.5rem 0.1rem #a2e946, 0.7rem 0.7rem 0.1rem #297ce9, 0.9rem 0.9rem 0.1rem #e92999;
     transition: all 0.5s; }
@@ -334,3 +336,72 @@ html {
   .menu.change {
     top: 15rem;
     transition: top 0.4s; }
+
+/** @format */
+@media (max-width: 1440px) {
+  .gallery__img {
+    width: 330px;
+    height: 240px; } }
+
+@media (max-width: 1100px) {
+  .heading {
+    font-size: 9rem;
+    margin: 0 5rem; }
+  .hero__icons i {
+    font-size: 25rem; }
+  .cards {
+    height: auto; }
+    .cards__container {
+      flex-wrap: wrap;
+      margin-top: 50px; }
+  .card {
+    margin: 5rem; }
+  .gallery__img {
+    width: 450px;
+    height: 300px; }
+  .gallery__description {
+    bottom: 5vw;
+    font-size: 2rem; }
+  .footer {
+    height: 30rem; } }
+
+@media (max-width: 920px) {
+  .heading {
+    font-size: 7rem;
+    margin: 0 5rem; }
+  .navbar__link {
+    margin: 2rem; }
+    .navbar__link i {
+      font-size: 4rem; }
+    .navbar__link span {
+      font-size: 2rem; } }
+
+@media (max-width: 752px) {
+  .heading {
+    font-size: 5rem;
+    margin: 0 10rem; }
+  .hero__icons i {
+    font-size: 18rem; }
+  .menu {
+    left: 2rem; }
+  .footer {
+    height: 40rem;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center; }
+    .footer__text {
+      margin-bottom: 4rem; }
+  .signup-form {
+    margin-left: 3rem; } }
+
+@media (max-width: 550px) {
+  html {
+    font-size: 40%; }
+  .gallery {
+    margin-top: 3rem; }
+    .gallery__img {
+      width: 300px;
+      height: 180px; }
+    .gallery__description {
+      bottom: 5vw;
+      font-size: 2rem; } }
